@@ -24,10 +24,11 @@ export default function PopupCategory() {
   
   const [searchTerm, setSearchTerm] = useState("")
 
-  const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(allBlogs.map((post) => post.category)))
-    return uniqueCategories.sort()
-  }, [])
+ const categories = useMemo(() => {
+  const uniqueCategories = Array.from(new Set(allBlogs.map((post) => post.category)))
+  return uniqueCategories.sort()
+}, [allBlogs])
+
 
   const filteredPosts = useMemo(() => {
     const lowerCaseSearchTerm = searchTerm.toLowerCase()
@@ -39,15 +40,16 @@ export default function PopupCategory() {
     )
   }, [searchTerm])
 
-  const groupedPosts = useMemo(() => {
-    return categories.reduce(
-      (acc, category) => {
-        acc[category] = filteredPosts.filter((post) => post.category === category)
-        return acc
-      },
-      {} as Record<string, BlogPost[]>,
-    )
-  }, [categories, filteredPosts])
+ const groupedPosts = useMemo(() => {
+  return categories.reduce(
+    (acc, category) => {
+      acc[category] = filteredPosts.filter((post) => post.category === category)
+      return acc
+    },
+    {} as Record<string, BlogPost[]>,
+  )
+}, [categories, filteredPosts])
+
 
 
   return (
@@ -92,7 +94,7 @@ export default function PopupCategory() {
                     {" "}
                     {/* Adjusted grid columns for dialog size */}
                     {categories.map((category, i) => {
-                      const postsInCategory = groupedPosts[category]
+                      const postsInCategory = groupedPosts[category];
                       if (postsInCategory.length === 0) {
                         return null // Don't render category if no posts match search
                       }

@@ -27,7 +27,6 @@ const Section1 = () => {
     setloading(true)
     async function getData() {
       let data = await getAllBlogData();
-      console.log("data.....", data);
       setAllBlogs(data);
       setloading(false)
     }

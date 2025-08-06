@@ -43,14 +43,6 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      title: "Lifestyle",
-      subtitle: "Minimal Living, Maximum Impact",
-      image: "https://images.pexels.com/photos/279607/pexels-photo-279607.jpeg",
-      link: "/blog/category/lifestyle",
-      description: "From minimalism to mindfulness, discover how lifestyle trends are shaping the future of living and well-being."
-    },
-    {
-      id: 5,
       title: "Business",
       subtitle: "Strategies for the Modern Entrepreneur",
       image: "https://images.pexels.com/photos/7681415/pexels-photo-7681415.jpeg",
@@ -58,7 +50,7 @@ const HeroSection = () => {
       description: "From startup successes to business insights, explore how entrepreneurs navigate the challenges and opportunities of the modern business world."
     },
     {
-      id: 6,
+      id: 5,
       title: "Nature",
       subtitle: "Earth's Silent Wonders",
       image: "https://images.pexels.com/photos/2747231/pexels-photo-2747231.jpeg",
@@ -66,7 +58,7 @@ const HeroSection = () => {
       description: "Reconnect with nature’s serenity—from lush forests to ocean depths—and why protecting them matters."
     },
     {
-      id: 7,
+      id: 6,
       title: "Photography",
       subtitle: "Capturing Life's Moments",
       image: "https://images.pexels.com/photos/248519/pexels-photo-248519.jpeg",
@@ -74,7 +66,7 @@ const HeroSection = () => {
       description: "From stunning landscapes to vibrant portraits, explore the world of photography and how it can capture moments that last a lifetime."
     },
     {
-      id: 8,
+      id: 7,
       title: "Music",
       subtitle: "The Soundtrack of Our Lives",
       image: "https://images.pexels.com/photos/30767625/pexels-photo-30767625.jpeg",

@@ -40,18 +40,23 @@ const page = () => {
         password,
       });
 
-      console.log("response......", response.data.message);
-      if (response.data.message) {
-        toast.success(response.data.message || "Login successful!");
-       window.location.href = "/";
-      }else{
-        toast.success(response.data.message.message || "Login Failed!");
+      let res = response.data;
+
+
+      console.log("Login response:", res);
+
+      if (res.success) {
+        toast.success(res.message || "Login successful!");
+        window.location.href = "/";
+      } else {
+         toast.error(res.message.message);
       }
     } catch (error: any) {
-      toast.error(error.response.data.message || "An unexpected error occurred.");
+      toast.error(error.message.message);
     } finally {
       setIsLoading(false);
     }
+
   };
 
 
