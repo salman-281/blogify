@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
       {
         ...blogData,
         //slug: blogData.title.toLowerCase().replace(/ /g, "-"),
-        slug: `/articles/single/blog/${blogData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, // Slugify title
+        slug: blogData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), // Slugify title
         author: {
           name: userData.user.name, // Replace with actual author name
           image: userData.user.profileImage, // Replace with actual author image URL

@@ -16,7 +16,7 @@ const SinglePostPage = () => {
     const fetchData = async () => {
       try {
         const res = await getAllBlogData();
-        const found = res.find((p: BlogPost) => `/articles/single/blog/${p.slug}` === params.id);
+        const found = res.find((p: BlogPost) => p.slug === params.id);
         setPost(found || null);
       } catch (error) {
         console.error('Error fetching blog data:', error);
