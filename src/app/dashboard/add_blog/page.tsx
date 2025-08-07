@@ -66,7 +66,7 @@
 
           console.log("Form data to be sent:", formData)
           try {
-            let response = await axios.post(`/api/auth/create-blog`, formData);
+            let response = await axios.post(`/api/auth/create-blogs`, formData);
             console.log("Blog post created successfully:", response.data);
             // Optionally clear form or show success message
             setTitle('');
