@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { ReactHTMLElement, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import axios from "axios"
 import { toast } from "sonner"
@@ -29,10 +29,14 @@ const page = () => {
     email: "",
     password: "",
   });
+  const [profileImage, setProfileImage] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [allUsers, setAllUsers] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
+
+  console.log("allUsers:", allUsers);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,10 +64,19 @@ const page = () => {
   
 
     try {
-      const response = await axios.post("/api/auth/register", {
-        name: inputs.name,
-        email: inputs.email,
-        password: inputs.password,
+      // Create FormData to handle file upload
+      const formData = new FormData();
+      formData.append("name", inputs.name);
+      formData.append("email", inputs.email);
+      formData.append("password", inputs.password);
+      if (profileImage) {
+        formData.append("profileImage", profileImage);
+      }
+
+      const response = await axios.post("/api/auth/register", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
       if (response.status === 200 || response.status === 201) {
@@ -112,6 +125,44 @@ const page = () => {
     }
   };
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file type
+      const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+      if (!validTypes.includes(file.type)) {
+        toast.error("Please select a valid image file (JPEG, PNG, or GIF).");
+        return;
+      }
+
+      // Validate file size (5MB limit)
+      const maxSize = 5 * 1024 * 1024; // 5MB
+      if (file.size > maxSize) {
+        toast.error("Image size should be less than 5MB.");
+        return;
+      }
+
+      setProfileImage(file);
+      
+      // Create preview
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const removeImage = () => {
+    setProfileImage(null);
+    setImagePreview(null);
+    // Reset the file input
+    const fileInput = document.getElementById('profileImage') as HTMLInputElement;
+    if (fileInput) {
+      fileInput.value = '';
+    }
+  };
+
 
 
  
@@ -124,6 +175,38 @@ const page = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Profile Image Section */}
+            <div className="space-y-2">
+              <Label htmlFor="profileImage">Profile Picture (Optional)</Label>
+              <div className="flex flex-col items-center space-y-3">
+                {imagePreview && (
+                  <div className="relative">
+                    <img
+                      src={imagePreview}
+                      alt="Profile preview"
+                      className="w-20 h-20 rounded-full object-cover border-2 border-gray-200"
+                    />
+                    <button
+                      type="button"
+                      onClick={removeImage}
+                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
+                    >
+                      ×
+                    </button>
+                  </div>
+                )}
+                <Input
+                  id="profileImage"
+                  name="profileImage"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  disabled={isLoading}
+                  className="h-[50px] rounded-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100"
+                />
+              </div>
+            </div>
+
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input

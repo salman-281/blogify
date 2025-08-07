@@ -55,7 +55,7 @@ const Page = () => {
 
   return (
     <div className="w-full p-4 md:p-10">
-      <h1 className="p-5 text-2xl font-bold">All Users</h1>
+      <h1 className="p-5 text-2xl font-bold font-sans">All Users</h1>
       <div className="rounded border overflow-x-auto">
         <Table>
           <TableCaption>A list of all registered users.</TableCaption>

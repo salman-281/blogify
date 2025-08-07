@@ -124,3 +124,24 @@
 .box-shadow{
   box-shadow: rgba(171, 230, 238, 0.1) 0px 8px 24px, rgba(121, 218, 245, 0.1) 0px 16px 56px, rgba(140, 186, 218, 0.1) 0px 24px 80px;
 }
+
+
+.dm_sans {
+  font-family: var(--font-DM_Sans);
+}
+
+.dm_sans {
+  font-family: var(--font-DM_Sans);
+}
+
+.lora {
+  font-family: var(--font-Lora);
+}
+
+.oswald {
+  font-family: var(--font-Oswald);
+}
+
+.oswald {
+  font-family: var(--font-Oswald);
+}

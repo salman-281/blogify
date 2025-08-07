@@ -23,14 +23,15 @@ const categories = [
 ]
 
 
-interface UserData {
+export interface UserData {
     success?: boolean;
     user?: {
         name?: string;
         email?: string;
         role?: string;
+        image?: string;
     };
-    image?: string;
+    
 }
 
 export interface NavbarProps {
@@ -43,6 +44,8 @@ const Navbar = ({ userData }: NavbarProps) => {
 
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+
+    console.log("userData in Navbar:", userData);
 
     const [isOpen, setIsOpen] = useState(false);
 

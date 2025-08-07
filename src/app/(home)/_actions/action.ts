@@ -20,6 +20,7 @@ export const getUser = async () => {
         });
 
         let data = await response.json();
+        
         return data;
     } catch (error: any) {
         return error?.response?.data?.message || "Failed to fetch user";

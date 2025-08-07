@@ -40,7 +40,7 @@ const Page = () => {
 
   return (
     <div className="w-full p-4 md:p-10 font-sans">
-      <h1 className="p-5 text-2xl font-bold">New Subscribers: {emails?.length}</h1>
+      <h1 className="p-5 text-2xl font-bold font-sans">New Subscribers: {emails?.length}</h1>
       <div className="border font-sans overflow-x-auto">
         <Table>
           <TableHeader>

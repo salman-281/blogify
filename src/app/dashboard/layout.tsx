@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Geist, Geist_Mono, Lora, Oswald } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -14,6 +14,21 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-Oswald",
+  subsets: ["latin"],
+});
+
+const dm_sans = DM_Sans({
+  variable: "--font-DM_Sans",
+  subsets: ["latin"],
+});
+
+const lora = Lora({
+  variable: "--font-Lora",
   subsets: ["latin"],
 });
 
@@ -33,8 +48,8 @@ export default async function DashboardLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${dm_sans.variable} ${lora.variable} ${oswald.variable} ${geistMono.variable} antialiased`}
+      > 
         <SidebarProvider>
 
             {/* Sidebar */}

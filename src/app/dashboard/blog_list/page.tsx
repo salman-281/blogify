@@ -54,7 +54,7 @@ const Page = () => {
   return (
     <div className="w-full max-w-7xl mx-auto p-4">
       <div className="flex justify-start items-start p-5 w-full">
-        <h2 className="text-2xl font-bold tracking-tighter font-sans">All Blogs</h2>
+        <h2 className="text-2xl font-bold tracking-tighter font-sans ">All Blogs</h2>
       </div>
 
       <div className=" border overflow-x-auto font-sans">
