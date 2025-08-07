@@ -67,7 +67,7 @@ const page = () => {
                     <section className="mt-4 p-3 grid grid-cols-1 z-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {
                             currentPosts.map((post, i) => (
-                                <Link href={post.link} key={i}>
+                                <Link href={post.slug} key={i}>
                                     <Card
                                         className="hover:translate-y-2 transition-all duration-300 hover:border-dashed shadow-2xl hover:border-orange-500 h-[430px] rounded-xs py-2 px-2"
                                     >

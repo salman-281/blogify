@@ -11,7 +11,7 @@ export interface BlogPost {
     name: string;
     image: string;
   };
-  link: string;
+  slug: string;
   favorite: boolean;
   popular: boolean;
   likes: number;

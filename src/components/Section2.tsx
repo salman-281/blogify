@@ -49,7 +49,7 @@ const Section2 = () => {
                 .filter((post) => post.isFeatured)
                 .slice(0, 8)
                 .map((post, i) => (
-                  <Link href={post.link} key={i}>
+                  <Link href={post.slug} key={i}>
                     <Card className="hover:translate-y-2 transition-all duration-300 hover:border-dashed shadow-2xl hover:border-orange-500 h-[460px] rounded-xs py-2 px-2">
                       <Image
                         src={post.imageUrl || "/placeholder.svg"}

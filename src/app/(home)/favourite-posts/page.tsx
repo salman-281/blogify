@@ -70,7 +70,7 @@ const page = () => {
                         {
                             currentPosts.filter((post) => post.favorite === true).map((post, i) => {
                                 return (
-                                    <Link href={post.link} key={i}>
+                                    <Link href={post.slug} key={i}>
                                         <Card
                                             className="hover:translate-y-2 transition-all duration-300 hover:border-dashed shadow-2xl hover:border-orange-500 h-[430px] rounded-xs py-2 px-2"
                                         >

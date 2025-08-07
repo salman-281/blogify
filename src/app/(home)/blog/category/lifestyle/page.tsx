@@ -45,7 +45,7 @@ const page = () => {
         <div className="mx-auto grid max-w-7xl items-start gap-6 py-5 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
           {
           lifestyle.map((post, i) => (
-           <Link href={post.link} key={i}>
+           <Link href={post.slug} key={i}>
                 <Card
                   className="group overflow-hidden hover:translate-y-2 transition-all duration-300 hover:border hover:border-dashed shadow-2xl hover:border-orange-500 h-[460px] rounded-xs py-2 px-2"
                 >

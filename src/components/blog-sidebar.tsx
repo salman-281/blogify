@@ -46,7 +46,7 @@ export default function BlogSidebar({allBlogs}: {allBlogs: BlogPost[]}) {
         <div className="border-b py-3 text-center text-lg font-semibold uppercase font-sans tracking-wider">Tags</div>
         <div className="flex flex-wrap gap-2">
           {categories.map((tag, i) => (
-            <Link key={i} href={tag.link}>
+            <Link key={i} href={tag.slug}>
               <Button
                 variant="outline"
                 className="rounded-full px-3 py-1 dm_sans cursor-pointer text-xs font-normal hover:bg-orange-500  shadow-lg hover:text-white bg-transparent"
@@ -64,8 +64,8 @@ export default function BlogSidebar({allBlogs}: {allBlogs: BlogPost[]}) {
         <div className="grid gap-2">
           {categories.map((category) => (
             <Link
-              key={category.link}
-              href={category.link}
+              key={category.slug}
+              href={category.slug}
               className="flex items-center justify-between py-2  dm_sans text-base text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
             >
               <div className="flex items-center hover:text-orange-500 gap-2">
@@ -87,7 +87,7 @@ export default function BlogSidebar({allBlogs}: {allBlogs: BlogPost[]}) {
           .slice(0, 5)
             .map((item, i) => {
               return (
-                <Link key={i} href={item.link}>
+                <Link key={i} href={item.slug}>
                   <div className="flex flex-col sm:flex-row hover:bg-gray-100 justify-start gap-4 items-center border p-2 cursor-pointer w-full">
                     <div className="w-full  overflow-hidden  sm:w-[250px]">
                       <Image className="rounded w-full h-auto"

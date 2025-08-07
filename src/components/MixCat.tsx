@@ -170,7 +170,7 @@ const MixCat = () => {
                     <Badge variant="outline" className="font-sans bg-black text-white mb-2">
                       {post.category}
                     </Badge>
-                    <Link href={post.link}>
+                    <Link href={post.slug}>
                       <h2 className="text-md oswald md:text-lg font-bold leading-tight mb-1 font-sans hover:text-orange-500">
                         {post.title}
                       </h2>
@@ -188,7 +188,7 @@ const MixCat = () => {
                       variant="outline"
                       asChild
                     >
-                      <Link href={post.link}>
+                      <Link href={post.slug}>
                         Read more
                         <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-2 duration-200 transition-all" />
                       </Link>

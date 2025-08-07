@@ -74,7 +74,7 @@ const page = () => {
             {
               currentPosts.filter((post) => post.isFeatured === true).map((post, i) => {
                 return (
-                  <Link href={post.link} key={i}>
+                  <Link href={post.slug} key={i}>
                     <Card
                       className="hover:translate-y-2 hover:border-dashed transition-all duration-300 shadow-2xl hover:border-orange-500 h-[430px] rounded-xs py-2 px-2"
                     >
