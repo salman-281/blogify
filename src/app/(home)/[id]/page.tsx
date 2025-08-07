@@ -26,6 +26,8 @@ const SinglePostPage = () => {
     fetchData();
   }, [params.id]);
 
+  console.log('Single Post:', post);
+
   if (!post) {
     return <div className="p-8 w-full flex justify-center items-center text-gray-500 text-center">
         <RiLoader4Fill className="animate-spin text-2xl text-orange-500" />
