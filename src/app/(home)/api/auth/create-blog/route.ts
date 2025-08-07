@@ -11,8 +11,10 @@ export async function POST(request: NextRequest) {
     const blogData = await request.json();
     let userData = await getUser();
 
+    console.log("userData 2:..........", userData);
 
-    console.log("User Data:..........", userData.name);
+
+    console.log("User Data 3:..........", userData.name);
 
 
   
@@ -31,8 +33,8 @@ export async function POST(request: NextRequest) {
         //slug: blogData.title.toLowerCase().replace(/ /g, "-"),
         slug: blogData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), // Slugify title
         author: {
-          name: userData.name, // Replace with actual author name
-          image: userData.profileImage, // Replace with actual author image URL
+          name: userData.user.name, // Replace with actual author name
+          image: userData.user.profileImage, // Replace with actual author image URL
         },
         date: new Date().toISOString(), // Current date in ISO format
         readTime: '5 min read', // Example read time, you can calculate this based on content length
