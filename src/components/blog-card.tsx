@@ -6,7 +6,7 @@ import { Badge } from "./ui/badge"
 
 
 
-export function BlogCard({ id, title, date, description, author, commentsCount, tags, popular, shares, readTime, likes, isFeatured, favorite, imageUrl, link, category, markdownContent }: BlogPost) {
+export function BlogCard({ id, title, date, description, author, commentsCount, tags, popular, shares, readTime, likes, isFeatured, favorite, imageUrl, slug, category, markdownContent }: BlogPost) {
  
 
   return (
@@ -14,7 +14,7 @@ export function BlogCard({ id, title, date, description, author, commentsCount, 
       <CardHeader className="pb-2">
         <span className="text-sm text-muted-foreground font-medium font-sans">#{id}</span>
         <CardTitle className="text-lg font-semibold text-foreground leading-tight">
-          <Link href={link} className="hover:underline font-sans oswald hover:text-orange-500">
+          <Link href={slug} className="hover:underline font-sans oswald hover:text-orange-500">
             {title}
           </Link>
         </CardTitle>

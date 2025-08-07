@@ -46,7 +46,7 @@ export default function BlogSidebar({allBlogs}: {allBlogs: BlogPost[]}) {
         <div className="border-b py-3 text-center text-lg font-semibold uppercase font-sans tracking-wider">Tags</div>
         <div className="flex flex-wrap gap-2">
           {categories.map((tag, i) => (
-            <Link key={i} href={tag.slug}>
+            <Link key={i} href={tag.link}>
               <Button
                 variant="outline"
                 className="rounded-full px-3 py-1 dm_sans cursor-pointer text-xs font-normal hover:bg-orange-500  shadow-lg hover:text-white bg-transparent"
@@ -64,8 +64,8 @@ export default function BlogSidebar({allBlogs}: {allBlogs: BlogPost[]}) {
         <div className="grid gap-2">
           {categories.map((category) => (
             <Link
-              key={category.slug}
-              href={category.slug}
+              key={category.link}
+              href={category.link}
               className="flex items-center justify-between py-2  dm_sans text-base text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
             >
               <div className="flex items-center hover:text-orange-500 gap-2">

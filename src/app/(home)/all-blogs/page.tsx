@@ -79,7 +79,7 @@ export default function Page() {
             </CardHeader>
             <CardContent className="flex-grow">{/* Additional content can go here if needed */}</CardContent>
             <CardFooter className="m-0">
-              <Link className="w-full" href={blog.slug || '/'}> <Button className="bg-orange-500 hover:bg-orange-600 py-1 px-1 rounded-full text-xs cursor-pointer flex dm_sans justify-center items-center gap-1 group"><span>Read Articles</span> <FaArrowRight className="group-hover:translate-x-8 transition-all duration-300 text-xs" /></Button></Link>
+              <Link className="w-full" href={blog.link || '/'}> <Button className="bg-orange-500 hover:bg-orange-600 py-1 px-1 rounded-full text-xs cursor-pointer flex dm_sans justify-center items-center gap-1 group"><span>Read Articles</span> <FaArrowRight className="group-hover:translate-x-8 transition-all duration-300 text-xs" /></Button></Link>
             </CardFooter>
           </Card>
         ))}
