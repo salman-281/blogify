@@ -194,7 +194,7 @@ const Navbar = ({ userData }: NavbarProps) => {
                                     </Button>
 
                                     <Button className="px-5 py-2 hidden sm:flex bg-gray-800 cursor-pointer text-white rounded-full hover:bg-gray-900 transition-all text-sm font-medium">
-                                        <span>Write a Post</span><GoPencil />
+                                        <Link className="flex justify-center items-center gap-1" href='/dashboard/add_blog'><span>Write a Post</span><GoPencil /></Link>
                                     </Button>
                                 </>
                                 :

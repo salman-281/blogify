@@ -14,7 +14,7 @@
       const [title, setTitle] = useState('')
       const [description, setDescription] = useState('')
       const [imageUrl, setImageUrl] = useState('')
-      const [favourite, setFavourite] = useState(false)
+      const [favorite, setfavorite] = useState(false)
       const [popular, setPopular] = useState(false)
       const [isFeatured, setIsFeatured] = useState(false)
       const [markdownContent, setMarkdownContent] = useState('')
@@ -56,7 +56,7 @@
             title,
             description,
             imageUrl,
-            favourite,
+            favorite,
             popular,
             isFeatured,
             markdownContent,
@@ -72,7 +72,7 @@
             setTitle('');
             setDescription('');
             setImageUrl('');
-            setFavourite(false);
+            setfavorite(false);
             setPopular(false);
             setIsFeatured(false);
             setMarkdownContent('');
@@ -152,11 +152,11 @@
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="flex items-center space-x-2">
                     <Switch
-                      id="favourite"
-                      checked={favourite}
-                      onCheckedChange={setFavourite}
+                      id="favorite"
+                      checked={favorite}
+                      onCheckedChange={setfavorite}
                     />
-                    <Label className="font-sans" htmlFor="favourite">Favourite</Label>
+                    <Label className="font-sans" htmlFor="favorite">favorite</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Switch

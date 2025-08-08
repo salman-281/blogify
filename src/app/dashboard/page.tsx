@@ -58,7 +58,6 @@ const Page = () => {
       <h1 className="p-5 text-2xl font-bold font-sans">All Users</h1>
       <div className="rounded border overflow-x-auto">
         <Table>
-          <TableCaption>A list of all registered users.</TableCaption>
           <TableHeader>
             <TableRow className="bg-gray-100 font-bold px-2 font-sans">
               <TableHead className="min-w-[180px]">User</TableHead>

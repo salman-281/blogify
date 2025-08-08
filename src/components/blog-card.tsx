@@ -20,7 +20,7 @@ export function BlogCard({ id, title, date, description, author, commentsCount, 
         </CardTitle>
         <CardDescription className="text-xs text-muted-foreground dm_sans">{date}</CardDescription>
         <p className="text-sm text-muted-foreground dm_sans mt-1 flex"><FaPenAlt className="mr-2" /><span>{author.name}</span></p>
-        <p className="text-sm text-muted-foreground dm_sans mt-1">{description}</p>
+        <p className="text-sm text-muted-foreground dm_sans mt-1">{description.length > 100 ? description.slice(0, 100) + "..." : description}</p>
       </CardHeader>
     </Card>
   )

@@ -176,7 +176,7 @@ const MixCat = () => {
                       </h2>
                     </Link>
                     <p className="text-gray-600 text-sm mb-2 line-clamp-3 dm_sans">
-                      {post.description}
+                      {post.description.length > 100 ? post.description.slice(0, 100) + "..." : post.description}
                     </p>
                     <div className="flex items-center text-gray-500 mb-1 font-sans text-xs">
                       <span className="font-bold uppercase mr-1">BY</span> {post.author.name}

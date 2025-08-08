@@ -73,7 +73,7 @@ const Section1 = () => {
                             <span>{post.title.slice(0, 40)}...</span>
                           </h3>
                           <p className="text-gray-500 dark:text-gray-400 text-sm dm_sans">
-                            {post.description.slice(0, 160)}...
+                            {post.description.length > 60 ? post.description.slice(0, 100) + "..." : post.description}
                           </p>
                           <span className='flex justify-start items-start gap-2 text-sm font-sans text-gray-600'>
                             {post.date.slice(0, 9)}

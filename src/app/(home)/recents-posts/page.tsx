@@ -81,7 +81,7 @@ const page = () => {
                                         />
                                         <CardContent className="grid gap-3 my-3 px-2">
                                             <h3 className="text-xl font-bold leading-tight group-hover:underline oswald">{post.title.slice(0, 40)}...</h3>
-                                            <p className="text-gray-500 dark:text-gray-400 text-sm dm_sans ">{post.description.slice(0, 160)}...</p>
+                                            <p className="text-gray-500 dark:text-gray-400 text-sm dm_sans ">{post.description.length > 60 ? post.description.slice(0, 100) + "..." : post.description}</p>
                                             <span className='flex justify-start items-start gap-2 text-sm font-sans text-gray-600'>{post.date.slice(0, 9)}</span>
                                             <div className="flex justify-between mt-3  w-full items-center font-sans">
                                                 <button className='flex justify-center cursor-pointer  items-center group gap-2 text-sm text-orange-500 dm_sans'><span>Read More</span><LuMoveRight className='group-hover:translate-x-2 transition-all duration-300' /></button>
